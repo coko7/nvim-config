@@ -65,6 +65,13 @@ vim.filetype.add({
 	},
 })
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "appsettings*.json",
+	callback = function()
+		vim.bo.filetype = "jsonc"
+	end,
+})
+
 function LineNumberColors()
 	vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "gray", bold = false })
 	vim.api.nvim_set_hl(0, "LineNr", { fg = "#ffe5b4", bold = true })

@@ -152,6 +152,7 @@ return {
 			bashls = {},
 			csharp_ls = {},
 			emmet_language_server = {},
+			harper_ls = {},
 			lemminx = {
 				init_options = {
 					settings = {

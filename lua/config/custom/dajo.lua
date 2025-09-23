@@ -21,7 +21,7 @@ end
 function M.goto_previous_day()
 	local file_date = lookup_current_file_date()
 	local prev_date = vim.fn.system("date -d '" .. file_date .. " -1 day' '+%Y-%m-%d'")
-	local entry_path = vim.fn.system("dajo.sh --get '" .. prev_date .. "'"):gsub("%s+$", "")
+	local entry_path = vim.fn.system("dajo.sh --create '" .. prev_date .. "'"):gsub("%s+$", ""):match("^[^:]*:(.*)$")
 	if entry_path ~= "" then
 		vim.cmd("edit " .. entry_path)
 	else
@@ -33,15 +33,18 @@ function M.goto_next_day()
 	local file_date = lookup_current_file_date()
 	local next_date = vim.fn.system("date -d '" .. file_date .. " +1 day' '+%Y-%m-%d'")
 	local entry_path = vim.fn.system("dajo.sh --get '" .. next_date .. "'"):gsub("%s+$", "")
-	if entry_path ~= "" then
+
+	if entry_path ~= "" and vim.uv.fs_stat(entry_path) ~= nil then
 		vim.cmd("edit " .. entry_path)
 	else
-		print("No file path returned by script")
+		print("dajo.sh: already on latest entry")
 	end
+
+	-- print("No file path returned by script")
 end
 
 function M.open_current_day_entry()
-	local entry_path = vim.fn.system("dajo.sh --get"):gsub("%s+$", "")
+	local entry_path = vim.fn.system("dajo.sh --create"):gsub("%s+$", ""):match("^[^:]*:(.*)$")
 
 	if entry_path ~= "" then
 		vim.cmd("edit " .. entry_path)
