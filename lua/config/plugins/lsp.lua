@@ -158,7 +158,7 @@ return {
 					settings = {
 						xml = {
 							format = {
-								enabled = true,
+								enabled = false,
 								splitAttributes = "preserve",
 								maxLineWidth = 350,
 							},

@@ -57,7 +57,10 @@ require("mason").setup({
 })
 
 vim.filetype.add({
-	extension = { rasi = "rasi" },
+	extension = {
+		wxs = "xml",
+		rasi = "rasi",
+	},
 	pattern = {
 		[".*/waybar/config"] = "jsonc",
 		[".*/kitty/*.conf"] = "bash",
@@ -66,7 +69,7 @@ vim.filetype.add({
 })
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = "appsettings*.json",
+	pattern = "*.appsettings*.json",
 	callback = function()
 		vim.bo.filetype = "jsonc"
 	end,
