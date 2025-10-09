@@ -43,12 +43,6 @@ vim.api.nvim_create_user_command("Shebang", function()
 	vim.api.nvim_put({ "#!/usr/bin/env bash", "" }, "l", false, true)
 end, {})
 
-vim.api.nvim_create_user_command("Tomorrow", function()
-	local tomorrow = os.time() + 86400
-	local date = os.date("## %A %d-%m-%Y", tomorrow)
-	vim.api.nvim_put({ date, "" }, "l", true, true)
-end, {})
-
 require("mason").setup({
 	registries = {
 		"github:mason-org/mason-registry",

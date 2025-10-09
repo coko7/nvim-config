@@ -5,6 +5,16 @@
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- Handy remaps to insert date/time
+vim.keymap.set("n", "<leader>dts", ':r! date "+\\%d-\\%m-\\%Y" <CR>', { desc = "Insert current [D]a[t]e ([S]hort)" })
+vim.keymap.set(
+	"n",
+	"<leader>dtl",
+	':r! date "+\\%A \\%d, \\%B \\%Y" <CR>',
+	{ desc = "Insert current [D]a[t]e ([L]ong)" }
+)
+vim.keymap.set("n", "<leader>dtt", ':r! date "+\\%H:\\%M:\\%S" <CR>', { desc = "Insert current [D]a[t]e [T]ime" })
+
 -- Diagnostic keymaps
 -- vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 vim.keymap.set("n", "]d", ":prev<CR>", { desc = "Go to previous [D]iagnostic message" })
