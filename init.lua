@@ -40,7 +40,11 @@ vim.api.nvim_create_user_command("MyTodo", function()
 end, {})
 
 vim.api.nvim_create_user_command("Shebang", function()
-	vim.api.nvim_put({ "#!/usr/bin/env bash", "" }, "l", false, true)
+	local first_line = vim.api.nvim_buf_get_lines(0, 0, 1, false)[1] or ""
+	if first_line:sub(1, 2) == "#!" then
+		return
+	end
+	vim.api.nvim_buf_set_lines(0, 0, 0, false, { "#!/usr/bin/env bash", "" })
 end, {})
 
 require("mason").setup({
@@ -54,6 +58,7 @@ vim.filetype.add({
 	extension = {
 		wxs = "xml",
 		rasi = "rasi",
+		cshtml = "cs",
 	},
 	pattern = {
 		[".*/waybar/config"] = "jsonc",
@@ -76,6 +81,14 @@ function LineNumberColors()
 end
 
 LineNumberColors()
+
+-- Automatically replace 'NNBSP' by normal space chars when writing buffer
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*",
+	callback = function()
+		vim.cmd([[%s/\%u202f/ /ge]])
+	end,
+})
 
 -- vim.filetype.add({
 -- 	extension = { ruleset = "xml" },

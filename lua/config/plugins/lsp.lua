@@ -152,7 +152,9 @@ return {
 			bashls = {},
 			csharp_ls = {},
 			emmet_language_server = {},
-			harper_ls = {},
+			harper_ls = {
+				enabled = false,
+			},
 			lemminx = {
 				init_options = {
 					settings = {
@@ -188,6 +190,7 @@ return {
 				},
 			},
 			rust_analyzer = {},
+			elixirls = {},
 			ts_ls = {},
 		}
 
