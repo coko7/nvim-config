@@ -58,6 +58,11 @@ return {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
 				},
+				frecency = {
+					-- see: https://github.com/nvim-telescope/telescope-frecency.nvim/issues/270#issuecomment-2412515625
+					db_safe_mode = false,
+					-- auto_validate is `true` in default
+				},
 			},
 		})
 

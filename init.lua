@@ -68,6 +68,13 @@ vim.filetype.add({
 })
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*.vil",
+	callback = function()
+		vim.bo.filetype = "json"
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = "*.appsettings*.json",
 	callback = function()
 		vim.bo.filetype = "jsonc"
@@ -83,12 +90,12 @@ end
 LineNumberColors()
 
 -- Automatically replace 'NNBSP' by normal space chars when writing buffer
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function()
-		vim.cmd([[%s/\%u202f/ /ge]])
-	end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.cmd([[%s/\%u202f/ /ge]])
+-- 	end,
+-- })
 
 -- vim.filetype.add({
 -- 	extension = { ruleset = "xml" },

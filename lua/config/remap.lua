@@ -5,6 +5,14 @@
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+vim.keymap.set(
+	"x",
+	"<leader>l",
+	"<Esc>bi[<Esc>ea](<C-r>+)<Esc>",
+	{ desc = "Apply markdown [L]ink on current selection" }
+)
+vim.keymap.set("n", "<leader>l", "viw<Esc>bi[<Esc>ea](<C-r>+)<Esc>", { desc = "Apply markdown [L]ink on current word" })
+
 -- Handy remaps to insert date/time
 vim.keymap.set("n", "<leader>dts", ':r! date "+\\%d-\\%m-\\%Y" <CR>', { desc = "Insert current [D]a[t]e ([S]hort)" })
 vim.keymap.set(
@@ -34,6 +42,8 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-Left>", { desc = "Move focus to the left w
 vim.keymap.set("n", "<C-l>", "<C-w><C-Right>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-Down>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-Up>", { desc = "Move focus to the upper window" })
+
+vim.keymap.set("n", "<leader>sb", ":Telescope frecency<CR>", { desc = "[S]earch [B]ookmark files" })
 
 vim.keymap.set("n", "<leader>ts", ":split | terminal<CR>", { desc = "Open terminal in split" })
 vim.keymap.set("n", "<leader>tv", ":vsplit | terminal<CR>", { desc = "Open terminal in vertical split" })

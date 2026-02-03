@@ -1,8 +1,8 @@
 -- vim.opt.guicursor = ""
 
 -- Make nbsp space stand out
-vim.opt.list = true
-vim.opt.listchars:append({ nbsp = "■" })
+-- vim.opt.list = true
+-- vim.opt.listchars:append({ nbsp = "■" })
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
