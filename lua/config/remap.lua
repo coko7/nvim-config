@@ -8,7 +8,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set(
 	"x",
 	"<leader>l",
-	"<Esc>bi[<Esc>ea](<C-r>+)<Esc>",
+	"<Esc>`<i[<Esc>`>la](<C-r>+)<Esc>",
 	{ desc = "Apply markdown [L]ink on current selection" }
 )
 vim.keymap.set("n", "<leader>l", "viw<Esc>bi[<Esc>ea](<C-r>+)<Esc>", { desc = "Apply markdown [L]ink on current word" })

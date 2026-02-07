@@ -1,4 +1,5 @@
 return {
+	enabled = false,
 	"nvim-telescope/telescope-frecency.nvim",
 	-- install the latest stable version
 	version = "*",
