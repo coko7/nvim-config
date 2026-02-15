@@ -1,0 +1,17 @@
+$HOME/.zshenv
+$XDG_CONFIG_HOME/aliases/aliases.sh
+$XDG_CONFIG_HOME/ghostty/config
+$XDG_CONFIG_HOME/git/aliases
+$XDG_CONFIG_HOME/git/my-aliases
+$XDG_CONFIG_HOME/hypr/bindings.conf
+$XDG_CONFIG_HOME/hypr/hypridle.conf
+$XDG_CONFIG_HOME/hypr/hyprland.conf
+$XDG_CONFIG_HOME/hypr/hyprlock.conf
+$XDG_CONFIG_HOME/hypr/window_rules_style.conf
+$XDG_CONFIG_HOME/hypr/window_rules_workspaces.conf
+$XDG_CONFIG_HOME/kitty/kitty.conf
+$XDG_CONFIG_HOME/tmux/tmux.conf
+$XDG_CONFIG_HOME/waybar/config.jsonc
+$XDG_CONFIG_HOME/zsh/.zshrc
+$XDG_CONFIG_HOME/zsh/my-custom-zle.zsh
+$XDG_CONFIG_HOME/starship/starship.toml
