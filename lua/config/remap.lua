@@ -11,7 +11,7 @@ vim.keymap.set(
 	"<Esc>`<i[<Esc>`>la](<C-r>+)<Esc>",
 	{ desc = "Apply markdown [L]ink on current selection" }
 )
-vim.keymap.set("n", "<leader>l", "viw<Esc>bi[<Esc>ea](<C-r>+)<Esc>", { desc = "Apply markdown [L]ink on current word" })
+vim.keymap.set("n", "<leader>l", '"9ciw[]<Esc>"9Pf]a(<C-r>+)<Esc>', { desc = "Apply markdown [L]ink on current word" })
 
 -- Handy remaps to insert date/time
 vim.keymap.set("n", "<leader>dts", ':r! date "+\\%d-\\%m-\\%Y" <CR>', { desc = "Insert current [D]a[t]e ([S]hort)" })
